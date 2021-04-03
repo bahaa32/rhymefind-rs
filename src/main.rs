@@ -21,9 +21,13 @@ fn main() {
     let phonemes_dictionary = read_dictionary(filename);
     loop {
         let mut input = String::new();
-        io::stdin()
+        // Read input and handle EOF.
+        if io::stdin()
             .read_line(&mut input)
-            .expect("Cannot read terminal!");
+            .expect("Cannot read terminal!") == 0 {
+                println!("Goodbye!");
+                std::process::exit(0);
+            }
         let input = input.trim_end().to_uppercase();
         if input == "EXIT" {
             break;
