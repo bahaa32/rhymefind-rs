@@ -1,1 +1,3 @@
-# rhymefind-rs -- WIP
+# rhymefind-rs
+
+Readme is a WIP
