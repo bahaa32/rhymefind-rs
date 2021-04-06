@@ -4,7 +4,7 @@ This is a port of one of my CS assignments in Rust to improve performance. Here'
 
 <img src="https://user-images.githubusercontent.com/62975113/113674024-8d87fa80-966e-11eb-9024-2fdc10105501.png" alt="Rust vs Python implementation performance" width="600"/>
 
-As with my [go-greenscreen](https://github.com/beldin222/go-greenscreen/) project, the performance improvement wasn't initially as good as the final version. I used `cargo flamegraph`, `criterion-rs` and `perf` to measure areas which could improve and changes in performance, although the numbers in the chart are from `time` but they were fairly consistent in my experience. I plan to eventually push my first and second attempts at this but for now here's another _very_ scientific chart to show the improvements (xkcd-style charts are my favorites).
+As with my [go-greenscreen](https://github.com/beldin222/go-greenscreen/) project, the performance improvement wasn't initially as good as the final version. I used `cargo flamegraph`, `criterion-rs` and `perf` to measure areas which could improve and changes in performance, although the numbers in the chart are from `time` but they were fairly consistent in my experience. I plan to eventually push my first and second attempts at this but for now here's another _very_ scientific chart to show the improvements (xkcd-style charts are my favorite).
 
 <img src="https://user-images.githubusercontent.com/62975113/113673953-7812d080-966e-11eb-9495-b0e960311065.png" alt="Performance at each attempt" width="600"/>
 
@@ -14,3 +14,6 @@ As with my [go-greenscreen](https://github.com/beldin222/go-greenscreen/) projec
 
 ## Usage
 First input line should be the path to a dictionary of format similar to `WordToPhonemes.txt` and every line after that can be a word to search. To exit, type `exit`.
+
+## Closing Words
+Looking at my profiling results, I think that around 0.6 seconds should be achievable. At this point, the program spends half its run time comparing data (which should be a good thing) but the other half has to do with vectors so I'm guessing it's either something inefficient I'm doing or me sorting all the data (which is required). However, I'm happy with the current result and I don't intend to significantly modify the code soon. Thanks for reading!
